@@ -1,0 +1,11 @@
+<h1>Check Out This Kitten!</h1>
+
+<h2><%= @kitten.name %></h2>
+
+<ul>
+    <li>Age: <%= @kitten.age %></li>
+    <li>Cutesness: <%= @kitten.cuteness %></li>
+    <li>Softness: <%= @kitten.softness %></li>
+</ul>
+
+<%= link_to "Update this Kitten's info?", edit_kitten_path %>

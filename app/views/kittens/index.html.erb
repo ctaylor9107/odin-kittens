@@ -1,0 +1,16 @@
+<h1>Kittens!</h1>
+
+<% if !@kittens.nil? %>
+  <ul>
+    <% @kittens.each do |kitten| %>
+      <li>
+        <%= link_to kitten.name, kitten %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>WHY DON'T YOU HAVE ANY KITTENS?!</H3>
+<% end %>
+
+<%= link_to "Add a New Kitten!", new_kitten_path %>
+    
