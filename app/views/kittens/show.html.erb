@@ -8,4 +8,9 @@
     <li>Softness: <%= @kitten.softness %></li>
 </ul>
 
-<%= link_to "Update this Kitten's info?", edit_kitten_path %>
+<%= link_to "Update this Kitten's info?", edit_kitten_path %><br><br>
+
+<%= link_to "Remove Kitten", kitten_path(@kitten), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure you want to remove this adorable kitten??"
+                  } %>
