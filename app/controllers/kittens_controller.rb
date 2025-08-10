@@ -16,6 +16,7 @@ class KittensController < ApplicationController
         @new_kitten = Kitten.new(kitten_params)
 
         if @new_kitten.save
+            flash[:success] = "Great! You now have a new kitten!"
             redirect_to root_path
         else
             render :new, status: :unprocessable_entity
@@ -30,6 +31,7 @@ class KittensController < ApplicationController
         @edit_kitten = Kitten.find(params[:id])
 
         if @edit_kitten.update(kitten_params)
+            flash[:success] = "Great! You updated your kitten's info!"
             redirect_to root_path
         else
             render :edit, status: :unprocessable_entity
@@ -40,6 +42,7 @@ class KittensController < ApplicationController
         @kitten = Kitten.find(params[:id])
         @kitten.destroy
 
+        flash[:success] = "Aww, this kitten is now gone."
         redirect_to root_path, status: :see_other
     end
 
